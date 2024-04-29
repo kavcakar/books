@@ -30,4 +30,4 @@ class Yorum(models.Model):
    )
 
    def __str__(self):
-    return self.degerlendirme
+    return str(self.degerlendirme)
