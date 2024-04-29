@@ -1,5 +1,5 @@
 from django.contrib import admin
-from kitablar.models import Kitap, Yorum
+from kitaplar.models import Kitap, Yorum
 # Register your models here.
 
 admin.site.register(Kitap)
