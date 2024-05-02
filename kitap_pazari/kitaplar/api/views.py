@@ -3,6 +3,7 @@ from rest_framework.mixins import ListModelMixin, CreateModelMixin
 
 from rest_framework import generics
 from rest_framework.generics import get_object_or_404
+from rest_framework import permissions
 
 from kitaplar.api.serializers import KitapSerializer, YorumSerializer
 from kitaplar.models import Kitap, Yorum
@@ -10,6 +11,7 @@ from kitaplar.models import Kitap, Yorum
 class KitapListCreateAPIView(generics.ListCreateAPIView):
     queryset = Kitap.objects.all()
     serializer_class = KitapSerializer
+    permission_classes = [permissions.IsAdminUser]
 
 
 class KitapDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
